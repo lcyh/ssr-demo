@@ -1,7 +1,7 @@
 module.exports = {
   env: {
     browser: true,
-    commonjs: true, // ADD, 支持对commonjs全局变量的识别
+    commonjs: true,
     es2021: true,
     node: true,
   },
@@ -11,6 +11,11 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
   ],
   parser: "@typescript-eslint/parser",
+  settings: {
+    react: {
+      version: "detect",
+    },
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -18,5 +23,8 @@ module.exports = {
     ecmaVersion: "latest",
   },
   plugins: ["react", "@typescript-eslint"],
-  rules: {},
+  rules: {
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+  },
 };
